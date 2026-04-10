@@ -38,18 +38,26 @@ Partial Class Form1
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.segundos = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.tiempo = New System.Windows.Forms.Label()
         Me.reset = New System.Windows.Forms.Button()
         Me.start = New System.Windows.Forms.Button()
         Me.cronometro = New System.Windows.Forms.Label()
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.temporizador = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.start2 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.config, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'horas
@@ -184,23 +192,23 @@ Partial Class Form1
         Me.segundos.TabIndex = 8
         Me.segundos.Text = "00"
         '
-        'Panel2
+        'Panel3
         '
-        Me.Panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Panel2.Controls.Add(Me.tiempo)
-        Me.Panel2.Controls.Add(Me.reset)
-        Me.Panel2.Controls.Add(Me.start)
-        Me.Panel2.Controls.Add(Me.cronometro)
-        Me.Panel2.Location = New System.Drawing.Point(415, 155)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(415, 346)
-        Me.Panel2.TabIndex = 3
+        Me.Panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Panel3.Controls.Add(Me.start2)
+        Me.Panel3.Controls.Add(Me.Button2)
+        Me.Panel3.Controls.Add(Me.Label2)
+        Me.Panel3.Controls.Add(Me.temporizador)
+        Me.Panel3.Location = New System.Drawing.Point(415, 155)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(415, 346)
+        Me.Panel3.TabIndex = 3
         '
         'tiempo
         '
         Me.tiempo.AutoSize = True
         Me.tiempo.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tiempo.Location = New System.Drawing.Point(118, 89)
+        Me.tiempo.Location = New System.Drawing.Point(115, 87)
         Me.tiempo.Name = "tiempo"
         Me.tiempo.Size = New System.Drawing.Size(151, 33)
         Me.tiempo.TabIndex = 3
@@ -208,7 +216,7 @@ Partial Class Form1
         '
         'reset
         '
-        Me.reset.Location = New System.Drawing.Point(277, 212)
+        Me.reset.Location = New System.Drawing.Point(274, 210)
         Me.reset.Name = "reset"
         Me.reset.Size = New System.Drawing.Size(89, 44)
         Me.reset.TabIndex = 2
@@ -217,7 +225,7 @@ Partial Class Form1
         '
         'start
         '
-        Me.start.Location = New System.Drawing.Point(29, 212)
+        Me.start.Location = New System.Drawing.Point(26, 210)
         Me.start.Name = "start"
         Me.start.Size = New System.Drawing.Size(89, 44)
         Me.start.TabIndex = 1
@@ -228,7 +236,7 @@ Partial Class Form1
         '
         Me.cronometro.AutoSize = True
         Me.cronometro.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cronometro.Location = New System.Drawing.Point(103, 24)
+        Me.cronometro.Location = New System.Drawing.Point(100, 22)
         Me.cronometro.Name = "cronometro"
         Me.cronometro.Size = New System.Drawing.Size(179, 33)
         Me.cronometro.TabIndex = 0
@@ -247,13 +255,75 @@ Partial Class Form1
         Me.PictureBox2.TabIndex = 4
         Me.PictureBox2.TabStop = False
         '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Panel2.Controls.Add(Me.tiempo)
+        Me.Panel2.Controls.Add(Me.reset)
+        Me.Panel2.Controls.Add(Me.start)
+        Me.Panel2.Controls.Add(Me.cronometro)
+        Me.Panel2.Location = New System.Drawing.Point(415, 155)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(415, 346)
+        Me.Panel2.TabIndex = 4
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(647, 507)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(57, 54)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 9
+        Me.PictureBox3.TabStop = False
+        '
+        'temporizador
+        '
+        Me.temporizador.AutoSize = True
+        Me.temporizador.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.temporizador.Location = New System.Drawing.Point(163, 113)
+        Me.temporizador.Name = "temporizador"
+        Me.temporizador.Size = New System.Drawing.Size(103, 39)
+        Me.temporizador.TabIndex = 0
+        Me.temporizador.Text = "00:00"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(91, 28)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(232, 39)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Temporizador"
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(76, 190)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(103, 47)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "5 min"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'start2
+        '
+        Me.start2.Location = New System.Drawing.Point(232, 190)
+        Me.start2.Name = "start2"
+        Me.start2.Size = New System.Drawing.Size(103, 47)
+        Me.start2.TabIndex = 3
+        Me.start2.Text = "Start"
+        Me.start2.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1183, 766)
-        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.segundos)
         Me.Controls.Add(Me.config)
@@ -269,9 +339,12 @@ Partial Class Form1
         CType(Me.config, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -291,11 +364,17 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents segundos As Label
-    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel3 As Panel
     Friend WithEvents tiempo As Label
     Friend WithEvents reset As Button
     Friend WithEvents start As Button
     Friend WithEvents cronometro As Label
     Friend WithEvents Timer3 As Timer
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents start2 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents temporizador As Label
 End Class
