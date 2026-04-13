@@ -39,6 +39,10 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.segundos = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.start2 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.temporizador = New System.Windows.Forms.Label()
         Me.tiempo = New System.Windows.Forms.Label()
         Me.reset = New System.Windows.Forms.Button()
         Me.start = New System.Windows.Forms.Button()
@@ -47,10 +51,9 @@ Partial Class Form1
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.temporizador = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.start2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Timer4 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.config, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -195,6 +198,8 @@ Partial Class Form1
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Panel3.Controls.Add(Me.Button4)
+        Me.Panel3.Controls.Add(Me.Button3)
         Me.Panel3.Controls.Add(Me.start2)
         Me.Panel3.Controls.Add(Me.Button2)
         Me.Panel3.Controls.Add(Me.Label2)
@@ -203,6 +208,44 @@ Partial Class Form1
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(415, 346)
         Me.Panel3.TabIndex = 3
+        '
+        'start2
+        '
+        Me.start2.Location = New System.Drawing.Point(232, 190)
+        Me.start2.Name = "start2"
+        Me.start2.Size = New System.Drawing.Size(103, 47)
+        Me.start2.TabIndex = 3
+        Me.start2.Text = "Start"
+        Me.start2.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(76, 190)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(103, 47)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "5 min"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(91, 28)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(232, 39)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Temporizador"
+        '
+        'temporizador
+        '
+        Me.temporizador.AutoSize = True
+        Me.temporizador.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.temporizador.Location = New System.Drawing.Point(163, 113)
+        Me.temporizador.Name = "temporizador"
+        Me.temporizador.Size = New System.Drawing.Size(103, 39)
+        Me.temporizador.TabIndex = 0
+        Me.temporizador.Text = "00:00"
         '
         'tiempo
         '
@@ -277,43 +320,26 @@ Partial Class Form1
         Me.PictureBox3.TabIndex = 9
         Me.PictureBox3.TabStop = False
         '
-        'temporizador
+        'Button3
         '
-        Me.temporizador.AutoSize = True
-        Me.temporizador.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.temporizador.Location = New System.Drawing.Point(163, 113)
-        Me.temporizador.Name = "temporizador"
-        Me.temporizador.Size = New System.Drawing.Size(103, 39)
-        Me.temporizador.TabIndex = 0
-        Me.temporizador.Text = "00:00"
+        Me.Button3.Location = New System.Drawing.Point(76, 247)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(103, 47)
+        Me.Button3.TabIndex = 4
+        Me.Button3.Text = "1 min"
+        Me.Button3.UseVisualStyleBackColor = True
         '
-        'Label2
+        'Button4
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(91, 28)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(232, 39)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Temporizador"
+        Me.Button4.Location = New System.Drawing.Point(232, 247)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(103, 47)
+        Me.Button4.TabIndex = 5
+        Me.Button4.Text = "Reset"
+        Me.Button4.UseVisualStyleBackColor = True
         '
-        'Button2
+        'Timer4
         '
-        Me.Button2.Location = New System.Drawing.Point(76, 190)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(103, 47)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "5 min"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'start2
-        '
-        Me.start2.Location = New System.Drawing.Point(232, 190)
-        Me.start2.Name = "start2"
-        Me.start2.Size = New System.Drawing.Size(103, 47)
-        Me.start2.TabIndex = 3
-        Me.start2.Text = "Start"
-        Me.start2.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -377,4 +403,7 @@ Partial Class Form1
     Friend WithEvents Button2 As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents temporizador As Label
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Timer4 As Timer
 End Class

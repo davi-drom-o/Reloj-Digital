@@ -141,4 +141,33 @@
             Panel3.Visible = True
         End If
     End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        tiempoRestante = tiempoRestante.Add(TimeSpan.FromMinutes(5))
+        temporizador.Text = tiempoRestante.ToString("mm\:ss")
+    End Sub
+
+    Private Sub start2_Click(sender As Object, e As EventArgs) Handles start2.Click
+        If tiempoRestante = TimeSpan.Zero Then
+            MessageBox.Show("Agrega tiempo primero.", "Aviso", MessageBoxButtons.OK,
+                            MessageBox.Ok, MessageBoxIcon.Warning)
+        End If
+    End Sub
+    Private Sub Timer4_Tick(sender As Object, e As EventArgs) Handles Timer4.Tick
+        If tiempoRestante.TotalMilliseconds > 0 Then
+            tiempoRestante = tiempoRestante.Subtract(TimeSpan.FromMilliseconds(Timer4.Interval))
+            temporizador.Text = tiempoRestante.ToString("mm\:ss")
+        Else
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Timer4.Enabled = False
+        temporizadorActivo = False
+        tiempoRestante = TimeSpan.Zero
+        temporizador.Text = "00:00"
+        start2.Text = "Start"
+
+        MessageBox.Show("Tiempo terminado", "Temporizador", MessageBoxButtons.OK,
+        MessageBoxIcon.Information)
+        End If
+    End Sub
 End Class
